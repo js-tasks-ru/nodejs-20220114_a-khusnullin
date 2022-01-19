@@ -1,6 +1,6 @@
-James 10
-Richard 10
-John 10
-Robert 20
-James 20
-Michael 30
+James
+Richard
+John
+Robert
+James
+Michael
