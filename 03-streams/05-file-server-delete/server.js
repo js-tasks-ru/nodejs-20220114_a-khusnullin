@@ -34,7 +34,7 @@ server.on('request', (req, res) => {
           }
         } else {
           res.statusCode = 200;
-          console.log("File deleted! " + res.statusCode);
+          res.end("File deleted");
         }
       });
 
