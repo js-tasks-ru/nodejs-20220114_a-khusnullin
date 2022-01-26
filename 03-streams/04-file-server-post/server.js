@@ -40,6 +40,9 @@ server.on('request', (req, res) => {
                   res.statusCode = 413;
                   fs.unlink(filepath, () => res.end());
                   res.end("Too large file");
+                } else {
+                  res.statusCode = 500;
+                  res.end("Error 500");
                 }
               }
             })
@@ -48,9 +51,11 @@ server.on('request', (req, res) => {
             //Step 7. Catch errors
             .on("error", (err) => {
               if (err.code === "ENOENT"){
+                res.statusCode = 404;
                 res.end("Error 404");
               } else {
-                console.log(err);
+                res.statusCode = 500;
+                res.end("Error 500");
               }
             })
             //Step 8. onFinish return status 201
