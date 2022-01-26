@@ -13,7 +13,7 @@ server.on('request', (req, res) => {
 
   switch (req.method) {
     case 'DELETE':
-      console.log(filepath);
+
        //Step 1. Delete file + callback for errors
       fs.unlink(filepath, (error) => {
         if (error){

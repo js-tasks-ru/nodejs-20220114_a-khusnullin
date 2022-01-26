@@ -51,10 +51,7 @@ class LineSplitStream extends stream.Transform {
     */
     this.push(this.tmpStr);
     this.tmpStr = "";
-    /*
-    Step 10. Dev-mod-only. Check that temporary elements are clear
-    */
-    console.log(`tmpArr: "${this.tmpArr}";${os.EOL}tmpStr: ${this.tmpStr};`);
+
     callback();
   }
 }
