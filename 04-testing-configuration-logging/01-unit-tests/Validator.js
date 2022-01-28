@@ -25,11 +25,9 @@ module.exports = class Validator {
           if (value.length > rules.max) {
             errors.push({field, error: `too long, expect ${rules.max}, got ${value.length}`});
           }
-          for (let i = 0; i< value.length; i++){
-            if (/[a-zA-Zа-яА-Я]/.test(value[i]) !== true){
-              errors.push({field, error: `unexpected symbols, got ${value}`});
-              break;
-            }
+          if (/[a-zA-Zа-яА-Я]+$/i.test(value) !== true){
+            errors.push({field, error: `unexpected symbols, got ${value}`});
+            break;
           }
           break;
         case 'number':
