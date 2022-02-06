@@ -2,7 +2,6 @@ const productsSchema = require('../models/Product');
 
 module.exports.productsBySubcategory = async function productsBySubcategory(ctx, next) {
   const {subcategory} = ctx.query;
-  console.log(ctx.query);
 
   if (!subcategory) return next();
 
@@ -77,7 +76,7 @@ module.exports.productList = async function productList(ctx, next) {
 
 module.exports.productById = async function productById(ctx, next) {
   const id = ctx.params.id;
-  console.log(ctx.params);
+
   try {
     //Fetch data from DB
     const product = await productsSchema.findById(id);
