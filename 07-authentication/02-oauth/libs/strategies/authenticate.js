@@ -23,7 +23,7 @@ module.exports = async function authenticate(strategy, email, displayName, done)
         await u.save();
       } catch (err) {
         //Step 6 - Check email validity using Mongoose
-        console.log(err);
+        //console.log(err);
         if (err.name === "ValidationError")
         {
           throw err;
@@ -35,7 +35,7 @@ module.exports = async function authenticate(strategy, email, displayName, done)
       done(null, newUser);
     }
   } catch (err) {
-    console.log(`${err.name}: ${err.message}`);
+    //console.log(`${err.name}: ${err.message}`);
     done(err);
   }
 };
