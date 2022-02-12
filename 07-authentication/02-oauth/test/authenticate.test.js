@@ -49,7 +49,7 @@ describe('authentication/oauth', () => {
       authenticate('github', 'emailemailemail', 'name', (err, user) => {
         expect(err).to.not.to.be.null;
         expect(err.name).to.equal('ValidationError');
-        expect(err.message).to.equal('Некорректный email.');
+        expect(err.errors.email.message).to.equal('Некорректный email.');
         done();
       });
     });
